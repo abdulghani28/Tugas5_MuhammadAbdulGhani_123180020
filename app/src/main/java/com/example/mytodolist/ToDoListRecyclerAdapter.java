@@ -37,7 +37,7 @@ public class ToDoListRecyclerAdapter extends RecyclerView.Adapter<ToDoListRecycl
     List<ToDoListTable> toDoListTableList;
     MyRoomDatabase myRoomDatabase;
     AlertDialog alertDialog;
-    public ToDoListRecyclerAdapter(Context mainActivity, List<ToDoListTable> toDoModeList, MyRoomDatabase myRoomDatabase) {
+    public ToDoListRecyclerAdapter(Context context, List<ToDoListTable> toDoModeList, MyRoomDatabase myRoomDatabase) {
         this.toDoListTableList = toDoModeList;
         this.myRoomDatabase = myRoomDatabase;
         this.context = context;
@@ -185,6 +185,7 @@ public class ToDoListRecyclerAdapter extends RecyclerView.Adapter<ToDoListRecycl
             edit = itemView.findViewById(R.id.edit);
             delete = itemView.findViewById(R.id.delete);
             complete = itemView.findViewById(R.id.complete);
+            complete.setOnClickListener(this);
         }
 
         void setItemClickListener(MyOnClickListener myOnClickListener){
